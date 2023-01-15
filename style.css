@@ -18,20 +18,83 @@ body{
     display: flex;
     flex-direction: column;
 }
+/* --------------NAVBAR----------------------- */
 .navbar{
     display: flex;
     justify-content: space-between;
-    padding: 3em 6em;
+    padding: 1em;
+}
+@media only screen and (min-width: 520px ) {
+    .navbar{
+        padding: 3em 6em;
+    }
 }
 .logo-img{
     width: 100px;
 }
+
+.navmenu{
+    display: none;
+}
+@media only screen and (min-width: 520px ) {
+    .navmenu{
+        display: block;
+    }
+}
+
 .nav-item-link{
     margin-left: 3em;
     text-decoration: none;
     color: #fff;
 
 }
+
+.nav-toggle{
+    display: block;
+}
+.nav-toggle-input,
+.nav-toggle-icon{
+    position: absolute;
+    right: 1em;
+}
+.nav-toggle-input{
+    display: none;
+}
+
+@media only screen and (min-width: 520px ) {
+    .nav-toggle-input,
+    .nav-toggle-icon{
+        display: none;
+    }
+}
+
+/* @media only screen and (max-width: 520px ) { */
+#nav-toggle-input:checked ~ .navmenu{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top:0;
+    /* top:2.5em; */
+    left: 0;
+    min-height: 100vh;
+}
+/* } */
+
+.navmenu .fa-close{
+    float: right;
+    margin: 2em;
+    display: none;
+}
+@media only screen and (max-width: 520px ) {
+    .navmenu .fa-close{
+        display: block;
+    }
+}
+    
+/* -----------------LANDING--------------------     */
 .landing{
     flex-grow: 1;
     display: flex;
