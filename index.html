@@ -29,6 +29,18 @@
                 return
             }
         }
+        function toggleCategories(event, state) {
+            event.preventDefault();
+            if (state === 'open') {
+                document.getElementById("nav-toggle-input").checked = false;
+                document.getElementById("categories").classList.add("open");
+                return
+            }
+            if (state === 'close') {
+                document.getElementById("categories").classList.remove("open");
+                return
+            }
+        }
     </script>
 
 </head>
@@ -48,7 +60,7 @@
                     <i class="fa fa-close" onclick="closeMenu(event);"></i>
                 </a>
                 <a class="nav-item-link" href="">HOME</a>
-                <a class="nav-item-link">CATEGORIES</a>
+                <a class="nav-item-link" onclick="toggleCategories(event, 'open')">CATEGORIES</a>
                 <a class="nav-item-link" onclick="toggleAbout(event, 'open')">ABOUT</a>
                 <a class="nav-item-link" href="">SERVICES</a>
             </div>
@@ -66,6 +78,25 @@
             </div>
 
             <h2>About Us</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sapiente obcaecati repellat dicta, est
+                placeat quasi eveniet reiciendis nulla eaque excepturi natus in beatae quos ad perferendis? Repudiandae,
+                libero quae.</p>
+
+                <br> <br>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sapiente obcaecati repellat dicta, est
+                placeat quasi eveniet reiciendis nulla eaque excepturi natus in beatae quos ad perferendis? Repudiandae,
+                libero quae.</p>
+
+        </div>
+
+        <div id="categories" class="categories">
+            <div class="close-icon-row">
+                <i class="fa fa-close pointer" onclick="toggleCategories(event, 'close');"></i>
+            </div>
+
+            <h2>Categories</h2>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sapiente obcaecati repellat dicta, est
                 placeat quasi eveniet reiciendis nulla eaque excepturi natus in beatae quos ad perferendis? Repudiandae,
