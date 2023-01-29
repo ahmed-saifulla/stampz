@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,27 @@
     <link rel="stylesheet" href="./style.css">
 
     <script>
-        function closeMenu(event){
+        function closeMenu(event) {
             event.preventDefault();
             document.getElementById("nav-toggle-input").checked = false;
+        }
+
+        function toggleAbout(event, state) {
+            event.preventDefault();
+            if (state === 'open') {
+                document.getElementById("nav-toggle-input").checked = false;
+                document.getElementById("about").classList.add("open");
+                return
+            }
+            if (state === 'close') {
+                document.getElementById("about").classList.remove("open");
+                return
+            }
         }
     </script>
 
 </head>
+
 <body>
     <div class="container">
         <div class="navbar">
@@ -33,19 +48,37 @@
                     <i class="fa fa-close" onclick="closeMenu(event);"></i>
                 </a>
                 <a class="nav-item-link" href="">HOME</a>
-                <a class="nav-item-link" href="">CATEGORIES</a>
-                <a class="nav-item-link" href="">ABOUT</a>
+                <a class="nav-item-link">CATEGORIES</a>
+                <a class="nav-item-link" onclick="toggleAbout(event, 'open')">ABOUT</a>
                 <a class="nav-item-link" href="">SERVICES</a>
             </div>
-            <!-- <div class="nav-toggle"> -->
-            <!-- </div> -->
-        </div>  
+        </div>
 
         <div class="landing">
             <h1>STAMPZ</h1>
             <h2>MAKE YOUR SIGNATURE</h2>
             <hr>
         </div>
+
+        <div id="about" class="about">
+            <div class="close-icon-row">
+                <i class="fa fa-close pointer" onclick="toggleAbout(event, 'close');"></i>
+            </div>
+
+            <h2>About Us</h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sapiente obcaecati repellat dicta, est
+                placeat quasi eveniet reiciendis nulla eaque excepturi natus in beatae quos ad perferendis? Repudiandae,
+                libero quae.</p>
+
+                <br> <br>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sapiente obcaecati repellat dicta, est
+                placeat quasi eveniet reiciendis nulla eaque excepturi natus in beatae quos ad perferendis? Repudiandae,
+                libero quae.</p>
+
+        </div>
     </div>
 </body>
+
 </html>
