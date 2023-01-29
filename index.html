@@ -17,41 +17,17 @@
             document.getElementById("nav-toggle-input").checked = false;
         }
 
-        function toggleAbout(event, state) {
+        function toggleSection(event, state, section) {
             event.preventDefault();
-            if (state === 'open') {
-                document.getElementById("nav-toggle-input").checked = false;
-                document.getElementById("about").classList.add("open");
-                return
-            }
-            if (state === 'close') {
-                document.getElementById("about").classList.remove("open");
-                return
-            }
-        }
-        function toggleCategories(event, state) {
-            event.preventDefault();
-            if (state === 'open') {
-                document.getElementById("nav-toggle-input").checked = false;
-                document.getElementById("categories").classList.add("open");
-                return
-            }
-            if (state === 'close') {
-                document.getElementById("categories").classList.remove("open");
-                return
-            }
-        }
-        
-        function toggleServices(event, state) {
-            event.preventDefault();
-            if (state === 'open') {
-                document.getElementById("nav-toggle-input").checked = false;
-                document.getElementById("services").classList.add("open");
-                return
-            }
-            if (state === 'close') {
-                document.getElementById("services").classList.remove("open");
-                return
+            switch (state) {
+                case 'open':
+                    document.getElementById("nav-toggle-input").checked = false;
+                    document.getElementById(section).classList.add("open");                    
+                    break;
+                case 'close':
+                    document.getElementById(section).classList.remove("open");
+                default:
+                    break;
             }
         }
     </script>
@@ -73,9 +49,9 @@
                     <i class="fa fa-close" onclick="closeMenu(event);"></i>
                 </a>
                 <a class="nav-item-link" href="">HOME</a>
-                <a class="nav-item-link" onclick="toggleCategories(event, 'open')">CATEGORIES</a>
-                <a class="nav-item-link" onclick="toggleAbout(event, 'open')">ABOUT</a>
-                <a class="nav-item-link" onclick="toggleServices(event, 'open')">SERVICES</a>
+                <a class="nav-item-link" onclick="toggleSection(event, 'open', 'categories')">CATEGORIES</a>
+                <a class="nav-item-link" onclick="toggleSection(event, 'open', 'about')">ABOUT</a>
+                <a class="nav-item-link" onclick="toggleSection(event, 'open', 'services')">SERVICES</a>
             </div>
         </div>
 
@@ -87,7 +63,7 @@
 
         <div id="about" class="about">
             <div class="close-icon-row">
-                <i class="fa fa-close pointer" onclick="toggleAbout(event, 'close');"></i>
+                <i class="fa fa-close pointer" onclick="toggleSection(event, 'close', 'about');"></i>
             </div>
 
             <h2>About Us</h2>
@@ -106,7 +82,7 @@
 
         <div id="categories" class="categories">
             <div class="close-icon-row">
-                <i class="fa fa-close pointer" onclick="toggleCategories(event, 'close');"></i>
+                <i class="fa fa-close pointer" onclick="toggleSection(event, 'close', 'categories');"></i>
             </div>
 
             <h2>Categories</h2>
@@ -125,7 +101,7 @@
 
         <div id="services" class="services">
             <div class="close-icon-row">
-                <i class="fa fa-close pointer" onclick="toggleServices(event, 'close');"></i>
+                <i class="fa fa-close pointer" onclick="toggleSection(event, 'close', 'services');"></i>
             </div>
 
             <h2>Services</h2>
