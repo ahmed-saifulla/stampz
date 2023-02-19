@@ -54,6 +54,16 @@ Also we are merchant exporter of Spices and Tea.." />
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+
+    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    let value = params.item; // "some_value"
+    console.log('params ', value)
+  </script>
 </head>
 
 <body>
