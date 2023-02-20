@@ -8,8 +8,15 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+@font-face {
+  font-family: "Geom";
+  src: url(../fonts/Geom-Variable.ttf);
+  /* src: url(../fonts/Geom\ Light.ttf); */
+  /* src: url(../fonts/Geom\ Ultra.ttf); */
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Geom", Open Sans, sans-serif;
   color: #444444;
 }
 
