@@ -8,8 +8,15 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+@font-face {
+  font-family: "Geom";
+  src: url(../fonts/Geom-Variable.ttf);
+  /* src: url(../fonts/Geom\ Light.ttf); */
+  /* src: url(../fonts/Geom\ Ultra.ttf); */
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Geom", Open Sans, sans-serif;
   color: #444444;
 }
 
@@ -34,7 +41,8 @@ h6 {
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
-.back-to-top {
+.back-to-top,
+.w-icon {
   position: fixed;
   display: none;
   width: 40px;
@@ -61,6 +69,17 @@ h6 {
   background: #fdc134;
 }
 
+.w-icon i {
+  font-size: 24px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.w-icon:hover {
+  color: #fff;
+  background: #6ba81b;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
